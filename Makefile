@@ -10,9 +10,13 @@ push:
 run:
 	@bash -x scripts/run.sh
 
-## Run container locally
+## Run container locally, mount veracrypt volume first
 vera:
 	@bash -x scripts/vera.sh
+
+## Dismount Veracrypt volume
+dismount:
+	@bash -x scripts/dismount.sh
 
 help:
 	@printf "Available targets:\n\n"
