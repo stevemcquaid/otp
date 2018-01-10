@@ -1,0 +1,1 @@
+docker run --rm gzm55/oathtool -b --totp "gr6d 5br7 25s6 vnck v4vl hlao re"
