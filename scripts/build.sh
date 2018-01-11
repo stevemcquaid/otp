@@ -1,4 +1,4 @@
 #!/bin/bash
 set -ex
 
-docker build -t stevemcquaid/otp .
+docker build -t stevemcquaid/otp:latest .
