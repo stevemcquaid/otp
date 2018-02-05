@@ -1,7 +1,9 @@
 #!/bin/bash
 set -ex
 
+source scripts/common.sh
+
 # Run veracrypt and prompt for password
-/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt --dismount
+$VERACRYPT --dismount
 
 echo "Done"

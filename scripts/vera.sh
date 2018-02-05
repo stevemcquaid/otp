@@ -1,7 +1,15 @@
 #!/bin/bash
 set -ex
 
-# Run veracrypt and prompt for password
-/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt --text --keyfiles "" --protect-hidden=no /Users/steve/Dropbox/1Haktop/dev/vera/otp.vc  /Volumes/otp
+source scripts/common.sh
 
-docker run -it --rm -v /Volumes/otp/:/Volumes/otp/ stevemcquaid/otp:latest go-wrapper run -config /Volumes/otp/config.csv 
+# Run veracrypt and prompt for password
+$VERACRYPT --text \
+        --mount \
+        --keyfiles "" \
+        --protect-hidden=no \
+        --pim=0 \
+        $VOLUME_PATH \
+        $MOUNT_PATH
+
+docker run -it --rm -v $MOUNT_PATH:/Volumes/otp/ stevemcquaid/otp:latest go-wrapper run -config /Volumes/otp/config.csv 

@@ -1,0 +1,11 @@
+#!/bin/bash
+set -ex
+
+# Switch based on system
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    VOLUME_PATH="/Volumes/vera/vc1.vc"
+    MOUNT_PATH="/media/veracrypt2"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    VOLUME_PATH="/Users/steve/Desktop/vc1.vc"
+    MOUNT_PATH="/Volumes/otp"
+fi
