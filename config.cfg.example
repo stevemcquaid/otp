@@ -1,5 +1,4 @@
 #!/bin/bash
-set -ex
 
 # Switch based on system
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
